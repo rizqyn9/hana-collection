@@ -1,37 +1,22 @@
-import React from "react";
-import {Link} from 'react-router-dom';
-
-function Button({text, bg, padding}) {
-  return (
-    <div>
-      <button
-        className={`
-          ${padding || 'px-6 py-2'} text-sm font-semibold uppercase 
-          rounded-sm text-white transition ${bg}`}
-      >
-        <span>{text}</span>
-      </button>
-    </div>
-  );
-}
-
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "./Button";
 
 function Navbar() {
   return (
-    <div className="fixed left-0 right-0 top-0 h-16 shadow-md border-b-2 border-gray-100 bg-gray-900">
+    <div className="sticky top-0 z-40 py-3 w-full backdrop-blur bg-indigo-800/50 text-white border-b-2 border-gray-900/10">
       <nav className="flex items-center container mx-auto h-full justify-between">
-        <h1 className="font-semibold uppercase text-lg text-gray-200">
-          🔄 Demo App
-        </h1>
+        <h1 className="font-semibold uppercase text-lg">Hana's Collections</h1>
         <div>
-          <ul className="flex items-center space-x-10 text-sm">
+          {/* <ul className="flex items-center space-x-10 text-sm">
             <li><Link to="/" className="text-gray-400 hover:text-gray-100">Home</Link></li>
             <li><Link to="/about" className="text-gray-400 hover:text-gray-100">About Us</Link></li>
             <li><Link to="/docs" className="text-gray-400 hover:text-gray-100">Docs</Link></li>
-          </ul>
+          </ul> */}
         </div>
-        <div>
-          <Button text="Login" bg="bg-gradient-to-r from-purple-500 to-blue-500"/>
+        <div className="flex gap-4">
+          <Button text={"Login"} />
+          <Button text={"Sign Up"} />
         </div>
       </nav>
     </div>
