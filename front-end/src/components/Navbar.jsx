@@ -1,25 +1,41 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "./Button";
 
 function Navbar() {
   return (
-    <div className="sticky top-0 z-40 py-3 w-full backdrop-blur bg-indigo-800/50 text-white border-b-2 border-gray-900/10">
-      <nav className="flex items-center container mx-auto h-full justify-between">
-        <h1 className="font-semibold uppercase text-lg">Hana's Collections</h1>
-        <div>
-          {/* <ul className="flex items-center space-x-10 text-sm">
-            <li><Link to="/" className="text-gray-400 hover:text-gray-100">Home</Link></li>
-            <li><Link to="/about" className="text-gray-400 hover:text-gray-100">About Us</Link></li>
-            <li><Link to="/docs" className="text-gray-400 hover:text-gray-100">Docs</Link></li>
-          </ul> */}
-        </div>
-        <div className="flex gap-4">
-          <Button text={"Login"} />
-          <Button text={"Sign Up"} />
-        </div>
-      </nav>
-    </div>
+    <nav class="flex bg-red-100 flex-wrap items-center justify-between p-5 dark:bg-gray-800 shadow">
+      <div class="lg:order-2 w-auto lg:w-1/5 lg:text-center">
+        <Link class="text-xl text-gray-800 font-semibold font-heading" href="/">
+          Hana Collection
+        </Link>
+      </div>
+      <div class="block lg:hidden">
+        <button class="navbar-burger flex items-center py-2 px-3 text-indigo-500 rounded border border-indigo-500">
+          <svg
+            class="fill-current h-3 w-3"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="navbar-menu hidden lg:order-3 lg:block w-full lg:w-2/5 lg:text-right">
+        <a
+          class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600"
+          href="#"
+        >
+          Daftar
+        </a>
+        <a
+          class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600"
+          href="#"
+        >
+          Masuk
+        </a>
+      </div>
+    </nav>
   );
 }
 

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+  .btn-1 {
+    @apply inline-block cursor-pointer px-6 whitespace-nowrap py-4 bg-red-600 hover:text-white relative -top-1 -left-1;
+    transition:all ease 0.3s;
+  }
+}
