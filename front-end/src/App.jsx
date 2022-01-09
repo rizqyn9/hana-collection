@@ -1,28 +1,19 @@
 import React, { useEffect } from "react";
-import Navbar from "./components/Navbar";
 import { Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Footer from "./components/Footer";
 import { Routes } from "react-router";
+import { Login } from "./pages/Auth";
+import Layout from "./components/Layout";
 
 function App() {
-  useEffect(() => {
-    let root = document.getElementsByTagName("html")[0];
-    if (root) root.classList.add("dark");
-    localStorage.setItem("color-theme", "dark");
-  }, []);
-
   return (
     <BrowserRouter>
-      <Routes />
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route path="signin" element={<Home />} />
+        <Route path="/" element={<Layout />}>
+          <Route index path="/" element={<Home />} />
         </Route>
+        <Route path="/masuk" element={<Login />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }
