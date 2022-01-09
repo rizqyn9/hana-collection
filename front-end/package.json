@@ -8,9 +8,11 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
+    "prop-types": "^15.8.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react-router-dom": "^5.3.0"
+    "react-router": "^6.2.1",
+    "react-router-dom": "6"
   },
   "devDependencies": {
     "@tailwindcss/jit": "^0.1.18",

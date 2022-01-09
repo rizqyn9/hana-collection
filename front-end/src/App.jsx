@@ -1,27 +1,28 @@
 import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Footer from "./components/Footer";
+import { Routes } from "react-router";
 
 function App() {
   useEffect(() => {
-    // document.body.className = "bg-indigo-900";
+    let root = document.getElementsByTagName("html")[0];
+    if (root) root.classList.add("dark");
+    localStorage.setItem("color-theme", "dark");
   }, []);
 
   return (
     <BrowserRouter>
-      <Switch>
-        <Route>
-          <Navbar />
-          <Switch>
-            <Route path="/" component={Home} exact />
-            <Route path="/about" component={About} exact />
-          </Switch>
-          <Footer />
+      <Routes />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route path="signin" element={<Home />} />
         </Route>
-      </Switch>
+      </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
